@@ -56,10 +56,10 @@ When there are no completed Tasks: No tasks completed, `let's` get to work!
 
 ---
 
-## 📈 GitHub Stats
+##  GitHub Stats 📈
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LunathiM-dev&layout=compact&theme=tokyonight" />
+  <img width="446" height="252" alt="Languages" src="https://github.com/user-attachments/assets/92bb27fe-1458-4039-b9d1-df7b53d75fda" />
 </div>
 
 ---
