@@ -1,38 +1,34 @@
-// Helper function to validate status
-function getValidStatus(taskNumber) {
-  let status;
-  while (true) {
-    status = prompt(`Enter status for task ${taskNumber} (todo, doing, done):`).toLowerCase().trim();
-    if (status === "todo" || status === "doing" || status === "done") {
-      return status;
-    } else {
-      alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
-    }
+function getValidStatus() {
+  let status = prompt("Enter task status (todo, doing, or done):").toLowerCase();
+
+  while (status !== "todo" && status !== "doing" && status !== "done") {
+    alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
+    status = prompt("Enter task status (todo, doing, or done):").toLowerCase();
   }
+
+  return status;
 }
 
-// Prompt the user for two tasks
-function getTask(taskNumber) {
-  const title = prompt(`Enter task ${taskNumber} title:`).trim();
-  const description = prompt(`Enter task ${taskNumber} description:`).trim();
-  const status = getValidStatus(taskNumber);
+// Get Task 1 input
+const task1Title = prompt("Enter task 1 title:");
+const task1Description = prompt("Enter task 1 description:");
+const task1Status = getValidStatus();
 
-  return {
-    title,
-    description,
-    status,
-  };
-}
+// Get Task 2 input
+const task2Title = prompt("Enter task 2 title:");
+const task2Description = prompt("Enter task 2 description:");
+const task2Status = getValidStatus();
 
-// Main logic
-const task1 = getTask(1);
-const task2 = getTask(2);
+// Store tasks as objects (for clarity and easier handling)
+const tasks = [
+  { title: task1Title, description: task1Description, status: task1Status },
+  { title: task2Title, description: task2Description, status: task2Status }
+];
 
-const tasks = [task1, task2];
-
-// Filter done tasks and log them
+// Filter for completed tasks
 const completedTasks = tasks.filter(task => task.status === "done");
 
+// Log result to console
 if (completedTasks.length > 0) {
   completedTasks.forEach(task => {
     console.log(`Title: ${task.title}, status: ${task.status}`);
