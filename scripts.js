@@ -9,23 +9,23 @@ function getValidStatus() {
   return status;
 }
 
-// Get Task 1 input
+// This is to grab Task 1 from user
 const task1Title = prompt("Enter task 1 title:");
 const task1Description = prompt("Enter task 1 description:");
 const task1Status = getValidStatus();
 
-// Get Task 2 input
+// This is to grab Task 2 from from user
 const task2Title = prompt("Enter task 2 title:");
 const task2Description = prompt("Enter task 2 description:");
 const task2Status = getValidStatus();
 
-// Store tasks as objects (for clarity and easier handling)
+// Ask for title (just keeping it short)
 const tasks = [
   { title: task1Title, description: task1Description, status: task1Status },
   { title: task2Title, description: task2Description, status: task2Status }
 ];
 
-// Filter for completed tasks
+// This is for completed tasks
 const completedTasks = tasks.filter(task => task.status === "done");
 
 // Log result to console
